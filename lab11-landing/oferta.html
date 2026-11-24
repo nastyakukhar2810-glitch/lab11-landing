@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Публічна оферта — UkrMovych</title>
+  <link rel="icon" href="assets/images/logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { DEFAULT: '#FF7A00', hover: '#FF9533', pressed: '#D66600' },
+            ink: '#12181E',
+            surface: { DEFAULT: '#1C242D', 2: '#252F3A' },
+            muted: '#94A3B8',
+            focus: '#3B82F6',
+            success: '#00C853'
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif']
+          },
+          fontSize: {
+            display: ['clamp(2.5rem, 6.5vw, 4.5rem)', { lineHeight: '1.1' }],
+            h2: ['clamp(1.75rem, 4vw, 2.5rem)', { lineHeight: '1.15' }]
+          },
+          boxShadow: {
+            hard: '4px 4px 0 #000',
+            'hard-lg': '6px 6px 0 #000',
+            'hard-sm': '2px 2px 0 #000'
+          }
+        }
+      }
+    };
+  </script>
+  <link rel="stylesheet" href="custom-styles.css">
+</head>
+<body class="bg-ink font-sans text-base leading-normal text-white antialiased">
+  <header class="gutter-x flex items-center justify-between gap-4 border-b border-surface-2 bg-ink py-3">
+    <a class="flex items-center gap-2 rounded-lg text-xl font-bold" href="index.html" aria-label="UkrMovych — на головну">
+      <img src="assets/images/logo.png" alt="" width="40" height="40" class="size-10">
+      <span>Ukr<span class="text-brand">Movych</span></span>
+    </a>
+    <a class="inline-flex min-h-11 items-center gap-2 rounded-lg text-sm font-semibold transition-colors hover:text-brand" href="index.html"><i class="fas fa-arrow-left" aria-hidden="true"></i> На головну</a>
+  </header>
+  <main class="gutter-x py-12 lg:py-16">
+    <article class="mx-auto max-w-3xl" aria-labelledby="page-title">
+      <h1 id="page-title" class="text-h2 font-black">Публічна оферта</h1>
+      <p class="mt-3 text-sm text-muted">Редакція від 24.11.2026</p>
+      <h2 class="mt-10 text-2xl font-bold">1. Загальні положення</h2>
+      <p class="mt-3 text-muted">Цей документ є публічною офертою (пропозицією укласти договір) відповідно до статей 633 і 641 Цивільного кодексу України. Виконавець — [ПІБ ФОП або назва виконавця], далі — «Виконавець». Особа, яка оплатила доступ, — «Замовник».</p>
+      <p class="mt-3 text-muted">Акцептом оферти є заповнення форми на сторінці оплати та оплата доступу. З моменту оплати договір вважається укладеним.</p>
+      <h2 class="mt-10 text-2xl font-bold">2. Предмет договору</h2>
+      <p class="mt-3 text-muted">Виконавець надає Замовнику доступ до онлайн-тренажера UkrMovych (бот та пов’язані вебресурси) для підготовки до НМТ з української мови, а Замовник оплачує цей доступ.</p>
+      <h2 class="mt-10 text-2xl font-bold">3. Вартість і порядок оплати</h2>
+      <p class="mt-3 text-muted">Вартість повного доступу вказана на сайті в момент оплати (на дату редакції — 99 грн з урахуванням чинної знижки).</p>
+      <p class="mt-3 text-muted">Перед оплатою Замовник вказує ім’я та контакти на сторінці оплати цього сайту, а саму оплату здійснює на захищеній платіжній сторінці monobank. Виконавець не отримує і не зберігає реквізити банківської картки Замовника.</p>
+      <h2 class="mt-10 text-2xl font-bold">4. Надання доступу</h2>
+      <p class="mt-3 text-muted">Після підтвердження оплати Виконавець надсилає доступ на контакти, які Замовник вказав на платіжній сторінці, як правило протягом доби.</p>
+      <p class="mt-3 text-muted">Якщо доступ не надійшов, Замовник може написати на <a class="text-brand underline" href="mailto:hello@ukrmovych.ua">hello@ukrmovych.ua</a> або в боті @ukrmovych_bot.</p>
+      <h2 class="mt-10 text-2xl font-bold">5. Права та обов’язки сторін</h2>
+      <p class="mt-3 text-muted">Виконавець зобов’язується забезпечувати працездатність тренажера та розглядати звернення Замовника.</p>
+      <p class="mt-3 text-muted">Замовник зобов’язується вказувати достовірні контактні дані та не передавати свій доступ третім особам.</p>
+      <h2 class="mt-10 text-2xl font-bold">6. Повернення коштів</h2>
+      <p class="mt-3 text-muted">Звернення щодо повернення коштів Замовник надсилає на <a class="text-brand underline" href="mailto:hello@ukrmovych.ua">hello@ukrmovych.ua</a>. Вони розглядаються відповідно до чинного законодавства України.</p>
+      <h2 class="mt-10 text-2xl font-bold">7. Відповідальність</h2>
+      <p class="mt-3 text-muted">Тренажер є допоміжним засобом підготовки. Виконавець не гарантує конкретний результат НМТ, а прогнози та приклади приросту балів на сайті мають орієнтовний характер.</p>
+      <h2 class="mt-10 text-2xl font-bold">8. Персональні дані</h2>
+      <p class="mt-3 text-muted">Обробка персональних даних регулюється <a class="text-brand underline" href="privacy.html">Політикою конфіденційності</a>.</p>
+      <h2 class="mt-10 text-2xl font-bold">9. Строк дії та зміни</h2>
+      <p class="mt-3 text-muted">Оферта діє безстроково. Виконавець може змінювати її умови, опублікувавши нову редакцію на цій сторінці; для вже оплаченого доступу діє редакція на момент оплати.</p>
+      <h2 class="mt-10 text-2xl font-bold">10. Реквізити Виконавця</h2>
+      <ul class="mt-3 list-disc space-y-1 pl-6 text-muted"><li>[ПІБ ФОП або назва]</li><li>[РНОКПП / код ЄДРПОУ]</li><li>[Адреса]</li><li>Електронна пошта: <a class="text-brand underline" href="mailto:hello@ukrmovych.ua">hello@ukrmovych.ua</a></li><li>Бот: @ukrmovych_bot</li></ul>
+    </article>
+  </main>
+  <footer class="gutter-x flex flex-wrap items-center justify-between gap-4 border-t border-surface-2 py-6 text-xs text-muted">
+    <p>© 2026 UkrMovych. Всі права захищені.</p>
+    <a class="inline-flex min-h-11 items-center transition-colors hover:text-brand" href="privacy.html">Політика конфіденційності</a>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Оформлення доступу — UkrMovych</title>
+  <meta name="description" content="Вкажи ім’я та контакти, щоб ми надіслали доступ до тренажера UkrMovych, і переходь до безпечної оплати.">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="assets/images/logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { DEFAULT: '#FF7A00', hover: '#FF9533', pressed: '#D66600' },
+            ink: '#12181E',
+            surface: { DEFAULT: '#1C242D', 2: '#252F3A' },
+            muted: '#94A3B8',
+            focus: '#3B82F6',
+            success: '#00C853'
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif']
+          },
+          fontSize: {
+            display: ['clamp(2.5rem, 6.5vw, 4.5rem)', { lineHeight: '1.1' }],
+            h2: ['clamp(1.75rem, 4vw, 2.5rem)', { lineHeight: '1.15' }]
+          },
+          boxShadow: {
+            hard: '4px 4px 0 #000',
+            'hard-lg': '6px 6px 0 #000',
+            'hard-sm': '2px 2px 0 #000'
+          }
+        }
+      }
+    };
+  </script>
+  <link rel="stylesheet" href="custom-styles.css">
+</head>
+<body class="bg-ink font-sans text-base leading-normal text-white antialiased">
+  <header class="gutter-x flex items-center justify-between gap-4 border-b border-surface-2 bg-ink py-3">
+    <a class="flex items-center gap-2 rounded-lg text-xl font-bold" href="index.html" aria-label="UkrMovych — на головну">
+      <img src="assets/images/logo.png" alt="" width="40" height="40" class="size-10">
+      <span>Ukr<span class="text-brand">Movych</span></span>
+    </a>
+    <a class="inline-flex min-h-11 items-center gap-2 rounded-lg text-sm font-semibold transition-colors hover:text-brand" href="index.html"><i class="fas fa-arrow-left" aria-hidden="true"></i> На головну</a>
+  </header>
+
+  <main class="gutter-x flex flex-col items-center gap-8 py-12 lg:py-16" id="main">
+    <header class="flex max-w-[60ch] flex-col items-center gap-4 text-center">
+      <p class="inline-flex items-center gap-2 rounded-full border border-surface-2 bg-surface px-3.5 py-1.5 text-xs font-bold uppercase tracking-wide">
+        <i class="fas fa-lock text-brand" aria-hidden="true"></i> Безпечна оплата
+      </p>
+      <h1 id="pay-title" class="text-h2 font-black">Оформлення <em class="italic text-brand">доступу</em></h1>
+      <p class="text-muted">Вкажи, куди надіслати доступ, — і переходь до оплати. Дані картки вводяться лише на сторінці банку.</p>
+    </header>
+
+    <div class="grid w-full max-w-5xl grid-cols-1 gap-6 lg:grid-cols-[3fr_2fr]">
+      <!-- Форма: рівень 1 — HTML5-атрибути, рівень 2 — assets/js/pay.js, вивід лише через textContent.
+           data-endpoint: сюди можна вписати адресу сервісу прийому форм (Formspree, Google Apps Script тощо) —
+           тоді дані клієнта надходитимуть власнику. Порожнє значення: дані лишаються лише в браузері клієнта. -->
+      <form id="pay-form" data-endpoint="" class="grid grid-cols-1 gap-4 rounded-3xl border border-surface-2 bg-surface p-6 sm:grid-cols-2 sm:p-8" novalidate aria-labelledby="pay-title">
+        <div class="flex flex-col gap-1.5 sm:col-span-2">
+          <label for="pay-name" class="text-xs font-bold">Ім’я учня</label>
+          <input id="pay-name" name="name" data-field="name" class="min-h-11 w-full rounded-lg border-2 border-surface-2 bg-ink p-3 text-sm font-normal text-white placeholder:text-muted focus:border-brand" type="text" placeholder="Наприклад, Марія" autocomplete="name" minlength="2" maxlength="60" required aria-required="true" aria-invalid="false" aria-describedby="pay-name-error">
+          <p id="pay-name-error" data-error="name" class="hidden text-xs text-red-400"></p>
+        </div>
+        <div class="flex flex-col gap-1.5">
+          <label for="pay-email" class="text-xs font-bold">Електронна пошта</label>
+          <input id="pay-email" name="email" data-field="email" class="min-h-11 w-full rounded-lg border-2 border-surface-2 bg-ink p-3 text-sm font-normal text-white placeholder:text-muted focus:border-brand" type="email" placeholder="user@gmail.com" autocomplete="email" maxlength="120" required aria-required="true" aria-invalid="false" aria-describedby="pay-email-error">
+          <p id="pay-email-error" data-error="email" class="hidden text-xs text-red-400"></p>
+        </div>
+        <div class="flex flex-col gap-1.5">
+          <label for="pay-phone" class="text-xs font-bold">Телефон</label>
+          <input id="pay-phone" name="phone" data-field="phone" class="min-h-11 w-full rounded-lg border-2 border-surface-2 bg-ink p-3 text-sm font-normal text-white placeholder:text-muted focus:border-brand" type="tel" placeholder="+380501234567" autocomplete="tel" inputmode="tel" maxlength="13" required aria-required="true" aria-invalid="false" aria-describedby="pay-phone-error">
+          <p id="pay-phone-error" data-error="phone" class="hidden text-xs text-red-400"></p>
+        </div>
+        <div class="flex flex-col gap-1.5 sm:col-span-2">
+          <label for="pay-agree" class="flex min-h-11 items-start gap-2 text-sm text-muted">
+            <input id="pay-agree" name="agreement" data-field="agree" class="mt-0.5 size-5 shrink-0 accent-brand" type="checkbox" required aria-required="true" aria-invalid="false" aria-describedby="pay-agree-error">
+            <span>Погоджуюсь з <a class="text-brand underline" href="oferta.html" target="_blank" rel="noopener noreferrer">публічною офертою</a> та <a class="text-brand underline" href="privacy.html" target="_blank" rel="noopener noreferrer">політикою конфіденційності</a></span>
+          </label>
+          <p id="pay-agree-error" data-error="agree" class="hidden text-xs text-red-400"></p>
+        </div>
+        <button id="pay-submit" type="submit" class="inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-2xl border-2 border-transparent bg-brand px-7 py-4 font-bold text-ink shadow-hard transition hover:bg-brand-hover active:translate-x-0.5 active:translate-y-0.5 active:bg-brand-pressed active:shadow-hard-sm disabled:cursor-not-allowed disabled:opacity-60 sm:col-span-2">
+          <span data-submit-label>Перейти до оплати — 99 грн</span> <i class="fas fa-arrow-right" aria-hidden="true"></i>
+        </button>
+        <p id="pay-status" class="min-h-5 text-sm sm:col-span-2" role="status" aria-live="polite"></p>
+        <noscript><p class="text-sm text-muted sm:col-span-2">Для заповнення форми потрібен JavaScript. Без нього можна <a class="text-brand underline" href="https://base.monobank.ua/sp/9sTVYuCPsjT6M5">одразу перейти до оплати</a> і вказати дані на сторінці банку.</p></noscript>
+      </form>
+
+      <aside class="flex min-w-0 flex-col justify-between gap-6 rounded-3xl bg-brand p-6 text-ink sm:p-8" aria-label="Ваше замовлення">
+        <div>
+          <p class="text-sm font-bold">Повний доступ до тренажера</p>
+          <p class="mt-1"><strong class="text-display font-black leading-none">99 грн</strong> <s class="font-bold opacity-60">145 грн</s></p>
+          <p class="mt-2 inline-block rounded-lg bg-ink px-2.5 py-0.5 text-xs font-black uppercase tracking-wide text-white">Знижка 30%</p>
+          <ul class="mt-6 flex flex-col gap-2 border-t border-black/20 pt-4 text-sm font-semibold">
+            <li class="flex items-start gap-2"><i class="fas fa-check mt-1" aria-hidden="true"></i> Персоналізовані лайфхаки</li>
+            <li class="flex items-start gap-2"><i class="fas fa-check mt-1" aria-hidden="true"></i> Інтервальне повторення</li>
+            <li class="flex items-start gap-2"><i class="fas fa-check mt-1" aria-hidden="true"></i> Розбір кожної помилки</li>
+            <li class="flex items-start gap-2"><i class="fas fa-check mt-1" aria-hidden="true"></i> Усі 233 слова НМТ</li>
+          </ul>
+        </div>
+        <ol class="flex list-decimal flex-col gap-1 border-t border-black/20 pl-5 pt-4 text-sm font-semibold">
+          <li>Заповни дані зліва</li>
+          <li>Оплати на захищеній сторінці monobank</li>
+          <li>Отримай доступ до бота й тренажера</li>
+        </ol>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="gutter-x flex flex-wrap items-center justify-between gap-4 border-t border-surface-2 py-6 text-xs text-muted">
+    <p>© 2026 UkrMovych. Всі права захищені.</p>
+    <ul class="flex gap-4">
+      <li><a class="inline-flex min-h-11 items-center transition-colors hover:text-brand" href="oferta.html">Публічна оферта</a></li>
+      <li><a class="inline-flex min-h-11 items-center transition-colors hover:text-brand" href="privacy.html">Політика конфіденційності</a></li>
+    </ul>
+  </footer>
+
+  <script src="assets/js/pay.js" defer></script>
+</body>
+</html>
